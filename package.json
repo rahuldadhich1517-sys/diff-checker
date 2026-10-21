@@ -1,0 +1,81 @@
+{
+  "name": "@rahul_dadhich15/diff-checker",
+  "version": "0.1.0",
+  "description": "Production-ready, deterministic, dependency-free TypeScript library for line-by-line text and source-code diffing, unified diff formatting, and diff summaries.",
+  "keywords": [
+    "diff",
+    "diff-checker",
+    "text-diff",
+    "line-diff",
+    "myers-diff",
+    "unified-diff",
+    "code-comparison",
+    "typescript",
+    "zero-dependencies"
+  ],
+  "author": {
+    "name": "Rahul Dadhich"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahuldadhich1517-sys/diff-checker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rahuldadhich1517-sys/diff-checker/issues"
+  },
+  "homepage": "https://github.com/rahuldadhich1517-sys/diff-checker#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./diff-checker": {
+      "types": "./dist/diff-checker/index.d.ts",
+      "import": "./dist/diff-checker/index.js",
+      "require": "./dist/diff-checker/index.cjs"
+    },
+    "./unified-diff": {
+      "types": "./dist/unified-diff/index.d.ts",
+      "import": "./dist/unified-diff/index.js",
+      "require": "./dist/unified-diff/index.cjs"
+    },
+    "./summary": {
+      "types": "./dist/summary/index.d.ts",
+      "import": "./dist/summary/index.js",
+      "require": "./dist/summary/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.0.8",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  }
+}
