@@ -371,78 +371,7 @@ All inputs are treated as **untrusted raw text**:
 
 ---
 
-## 16. Development Instructions
-
-Prerequisites: Node.js 18.0.0 or higher.
-
-```bash
-# Clone the repository
-git clone https://github.com/rahuldadhich1517-sys/diff-checker.git
-cd diff-checker
-
-# Install dependencies
-npm install
-
-# Type-check TypeScript
-npm run typecheck
-
-# Run tests
-npm run test:run
-
-# Run tests with coverage
-npm run test:coverage
-
-# Build distribution artifacts
-npm run build
-```
-
----
-
-## 17. Tests and Coverage
-
-The test suite contains **90 unit and integration tests** across 9 test files:
-
-- `tests/diff-checker.test.ts`: Insertions, deletions, replacements, line numbering, repeated content.
-- `tests/line-handling.test.ts`: LF, CRLF, CR, mixed endings, whitespace/case options, Unicode.
-- `tests/unified-diff.test.ts`: Unified diff hunk calculations, context merging, EOF markers.
-- `tests/summary.test.ts`: Hand-calculated statistics, replacements vs operations.
-- `tests/edge-cases.test.ts`: Runtime validations and resource limits.
-- `tests/security.test.ts`: Untrusted code inputs, script tags, SQL statements.
-- `tests/performance.test.ts`: Bounded regression checks on large files and long lines.
-- `tests/property.test.ts`: Source reconstruction invariants and monotonicity.
-- `tests/integration.test.ts`: Real-world TypeScript, JSON, YAML, Python, Markdown code diffs.
-
-### Test Coverage:
-- **Statements**: > 98%
-- **Branches**: > 96%
-- **Functions**: 100%
-- **Lines**: > 98%
-
----
-
-## 18. Build Instructions
-
-Build outputs are generated using `tsup`:
-
-```bash
-npm run build
-```
-
-Output directory:
-```
-dist/
-├── index.js             # ESM bundle
-├── index.cjs            # CommonJS bundle
-├── index.d.ts           # ESM type declarations
-├── index.d.cts          # CommonJS type declarations
-├── diff-checker/        # Submodule bundle
-├── unified-diff/        # Submodule bundle
-└── summary/             # Submodule bundle
-```
-
----
-
-## 19. API Reference
+## 16. API Reference
 
 ### `diffChecker(originalText, modifiedText, options?): DiffResult`
 Compares two strings line by line and returns structured diff results.
@@ -458,7 +387,7 @@ Custom error class thrown when invalid inputs or resource limit violations occur
 
 ---
 
-## 20. Supported Runtime Environments
+## 17. Supported Runtime Environments
 
 - Node.js >= 18.0.0
 - Modern Browsers (Chrome, Firefox, Safari, Edge)
@@ -468,7 +397,7 @@ Custom error class thrown when invalid inputs or resource limit violations occur
 
 ---
 
-## 21. Known Limitations
+## 18. Known Limitations
 
 - **Textual Comparison Only**: Compares lines by text; does not detect semantic symbol renamings or AST alterations.
 - **Line-Level Granularity**: Edits within a line are represented as line replacements. Word-level or character-level diffing is not included in the core line-diff utility.
@@ -476,18 +405,18 @@ Custom error class thrown when invalid inputs or resource limit violations occur
 
 ---
 
-## 22. Contributing
+## 19. Contributing
 
 Contributions, bug reports, and pull requests are welcome! Please open an issue on GitHub to discuss proposed changes before submitting a PR.
 
 ---
 
-## 23. License
+## 20. License
 
 Distributed under the [MIT License](LICENSE). Copyright (c) 2026 Rahul Dadhich.
 
 ---
 
-## 24. Changelog
+## 21. Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history and release notes.
